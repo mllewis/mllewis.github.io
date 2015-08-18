@@ -57,7 +57,7 @@ function showSlide(id) {
 //Call the maker getter to get the cond variable  (determines list)
 var xmlHttp = null;
 xmlHttp = new XMLHttpRequest();
-xmlHttp.open( "GET", "http://langcog.stanford.edu/cgi-bin/subject_equalizer/maker_getter.php?conds=" + condCounts +"&filename=" + filename, false );
+xmlHttp.open( "GET", "https://langcog.stanford.edu/cgi-bin/subject_equalizer/maker_getter.php?conds=" + condCounts +"&filename=" + filename, false );
 xmlHttp.send( null );
 var cond = xmlHttp.responseText;
 var cond = random(2) + 1; // (1-2)
@@ -177,7 +177,7 @@ var experiment = {
             //Decrement			
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", "http://langcog.stanford.edu/cgi-bin/subject_equalizer/decrementer.php?filename=" + filename + "&to_decrement=" + cond, false);
+            xmlHttp.open("GET", "https://langcog.stanford.edu/cgi-bin/subject_equalizer/decrementer.php?filename=" + filename + "&to_decrement=" + cond, false);
             xmlHttp.send(null);
 
             turk.submit(experiment);
