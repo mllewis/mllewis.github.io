@@ -4,7 +4,7 @@
 $(document).ready(function(){
 
 	var index_top_html = " <li> <a  href='projects/RC/RCindex.html'> Lewis and Frank (under review) </a></li>"
-	index_top_html += " <li> <a  href='projects/xtSamp/xtSamp_index.html'> Lewis and Frank (in prep) </a></li>"
+	index_top_html += " <li> <a  href='projects/xtSamp/xtSampindex.html'> Lewis and Frank (in prep) </a></li>"
 	index_top_html += " <li> <a href='projects/RCI/RCI_index.html'> Lewis and Frank (2015) </a></li>"
 	index_top_html += " <li> <a href='projects/tablet/tablet_index.html'> Frank et al. (2015) </a></li>"
 
