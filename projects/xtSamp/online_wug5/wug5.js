@@ -53,7 +53,7 @@ xmlHttp.open( "GET", "https://langcog.stanford.edu/cgi-bin/subject_equalizer/mak
 xmlHttp.send( null );
 // var cond = xmlHttp.responseText;
 //var cond = random(2) + 1; // (1-2)
-var cond=1
+var cond = 0
 
 
 
@@ -295,7 +295,7 @@ var experiment = {
 					c = c + 1
 				}
 			}
-        	var breaks_html = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><HR>'
+        	var breaks_html = '<br><br><br><br><br><br><br><br><br><br><br><br><br><brs><br><HR>'
             var testPic_html;
             var testQuestion_html;
 
