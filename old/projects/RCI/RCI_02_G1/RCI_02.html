@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>Short memory game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="mmturkey.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="initial-scale=1.0" />
+  </head>
+  
+ 
+  <body>
+  
+   <!--INTSTRUCTIONS-->
+    <div class="slide" id="instructions">
+      <img src="images/stanford.png" alt="Stanford University">
+        <p id='logo-text'>Stanford Language and Cognition Lab</p>
+        <p class="block-text">Click to begin.
+        </p>
+        
+        <button type="button" onClick="this.blur(); showSlide('inst')">Start</button>
+        <p class="block-text">(Note: you won't be able to preview this HIT before accepting it because it's so short.)</p>
+
+     <p class="block-text" id="legal">By answering the
+    	following questions, you are participating in a study being performed by
+    	cognitive scientists in the Stanford Department of Psychology. If you have
+    	questions about this research, please contact us at <a
+    	href="mailto://languagecoglab@gmail.com.">languagecoglab@gmail.com</a>.
+    	You must be at least 18 years old to participate. Your participation in this research is voluntary. You may
+    	decline to answer any or all of the following questions. You may decline
+    	further participation, at any time, without adverse consequences. Your
+    	anonymity is assured; the researchers who have requested your
+    	participation will not receive any personal information about you. Note however that we have recently been made aware that your public Amazon.com profile can be accessed via your worker ID if you do not choose to opt out. If you would like to opt out of this feature, you may follow instructions available <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=16465241">here</a>.</p>
+    </div>
+      
+    <!-- TRAIN INSTRUCTION SLIDE --> 
+    <div class="slide" id="inst">
+        <br>
+        <br>
+        <br>
+        <p class="block-text">In the first part of the experiment, you will learn the names for
+			ten objects in an alien language. You will see the name for each object four times. Do your best to memorize the name for each object. </p>
+		<p class="block-text"> In the second part of the experiment, your 
+			memory for the names of the objects will be tested. </p>
+		
+		<p class="block-text"> This experiment is difficult, but please do not cheat by writing down the answers. Just do the best you can.</p>
+		
+		<p class="block-text"> When you are ready to begin, click the button below. </p>
+		
+		 <table align="center"><tr><td align="center">
+		   <button type="button" id="famNextButton" onClick="experiment.training()">Next</button>
+		 </table>   
+    </div>
+
+	<!--TRAIN SLIDE-->
+	<div class="slide" id="train">
+		<table align="center">
+		<tr><td><div id="ratingquestion"> </div></td></tr>  <!--dynamically built in javascript-->
+		<tr><td align="center"><div id="ratingimage"> </div></td></tr> <!--dynamically built in javascript--> 
+        </table>
+        <br><br>
+        <table align="center"><tr><td><div id="label"> </div></td></tr> </table>
+        <br><br>
+        <p align="center"> <i>Press SPACE to see the next object. </i></p>
+        <table align="center"><tr><td align="center">
+		   </td></tr><tr><td align="center"><div id = "counter"></div> </td> </tr>
+		 </table>
+		
+    </div>
+      
+    <!-- TEST INSTRUCTION SLIDE --> 
+    <div class="slide" id="test_inst">
+        <br>
+        <br>
+        <br>
+        <p class="block-text">Your memory for the names of objects in the alien language will now be tested. Please type the name of the object below each picture. </p>
+		<p class="block-text"> Click the button below to begin. </p>
+		 <table align="center"><tr><td align="center">
+		   <button type="button" id="famNextButton" onClick="experiment.testing()">Next</button>
+		 </table>   
+    </div>
+      
+    <!-- TEST SLIDE --> 
+    <div class="slide" id="test">
+    <p class="block-text"> What is the name of this object in the alien language?</p>
+      <div id="objects"> </div> <!--dynamically built in javascript-->
+      <div id="message"> </div> <!--dynamically built in javascript-->
+      <table align="center">
+          <tr><td>
+          <button type="button" onClick="this.blur();experiment.test_check()">Next</button> 
+          </td> </tr>
+          <tr><td align="center"><div id = "counter2"></div></td></tr>
+      </table>
+	</div>
+
+        
+    <!--CHECK QUESTION --> 
+    <div class="slide" id="check">
+        <br>
+        <table align="center"><tr><td align="center"><div id = "score"></div> </td> </tr></table>
+        <br> <br>
+
+		<p class="centeredtext">
+		(1) What was this survey about? : <br>
+		<input type="text" id="about" name="about" size="70"> 
+		</p>
+		
+		<p class="centeredtext" name="comments" >
+		(2) Any other comments for us? : <br>
+		<input type="text" id="comments" name="comments" size="70"> 
+		</p>
+		
+		<table align="center"><tr><td align="center">
+		<button type="button" id="checkFinishedButton"
+			 onClick="experiment.check_finished()">Finished</button>
+             <div id="checkMessage"> </div><!--dynamically built in javascript-->
+
+		</td></tr>
+    </div>
+    
+
+	 <!--FINISHED SLIDE-->
+    <div class="slide" id="finished">
+        You're finished - thanks for participating! Submitting to Mechanical Turk...
+    </div>
+    
+    <script src="RCI_02.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>What does this mean?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="mmturkey.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="initial-scale=1.0" />
+  </head>
+  
+  <body>
+      
+    <!--INSTRUCTIONS-->
+    <div class="slide" id="instructions">
+      <img src="images/stanford.png" alt="Stanford University">
+        <p id='logo-text'>Stanford Language and Cognition Lab</p>
+        <p class="block-text">In this experiment, we're interested in your judgments about what people are talking about. 
+        It should take less than 3 minutes. 
+        </p>
+        
+        <button type="button" onClick="this.blur(); experiment.test()">Start</button>
+        	         <p class="block-text">(Note: you won't be able to preview this HIT before accepting it because it's so short.)</p>
+
+        <p class="block-text" id="legal">By answering the
+    	following questions, you are participating in a study being performed by
+    	cognitive scientists in the Stanford Department of Psychology. If you have
+    	questions about this research, please contact us at <a
+    	href="mailto://languagecoglab@gmail.com.">languagecoglab@gmail.com</a>.
+    	You must be  at least 18 years old to participate. Your participation in this research is voluntary. You may
+    	decline to answer any or all of the following questions. You may decline
+    	further participation, at any time, without adverse consequences. Your
+    	anonymity is assured; the researchers who have requested your
+    	participation will not receive any personal information about you. Note however that we have recently been    made aware that your public Amazon.com profile can be accessed via your worker ID if you do not choose to opt out. If you would like to opt out of this feature, you may follow instructions available <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=16465241">here</a>.</p>
+    </div>
+    
+      
+    <!--TEST-->
+    <div class="slide" id="testSlide">
+    <p class="block-text"> Look at the two objects below. </p>
+      <div id="labelInst"> </div> <!--dynamically built in javascript-->
+      <div id="objects"> </div> <!--dynamically built in javascript-->
+      <div id="message"> </div> <!--dynamically built in javascript-->
+      <table align="center"><tr><td> <button type="button" onClick="this.blur();experiment.select()">Next</button> </td> </tr>
+                    <tr><td align="center"><div id = "counter"></div> </td> </tr>
+        </table>
+    </div>
+
+      
+     <!--POST QUESTIONS-->
+     <div class="slide" id="check">
+		<p class="block-text">
+		(1) What was this survey about? : <br>
+		<input type="text" id="about" name="about" size="70"> 
+		</p>
+		<p class="block-text" name="comments" >
+		(2) Any other comments for us? : <br>
+		<input type="text" id="comments" name="comments" size="70"> 
+		</p>
+		<table align="center"><tr><td align="center">
+		<button type="button" id="checkFinishedButton"
+			 onClick="experiment.check_finished()">Finished</button>
+		<div id="checkMessage"> </div><!--dynamically built in javascript-->
+		</td></tr>
+    </div>
+    
+        
+    <!--FINISHED-->
+    <div class="slide" id="finished">
+        You're finished - thanks for participating! Submitting to Mechanical Turk...
+    </div>
+    
+    <script src="ref_complex_38.js"></script>
+    
+  </body>
+</html>
